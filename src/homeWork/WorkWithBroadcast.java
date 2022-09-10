@@ -34,6 +34,9 @@ public class WorkWithBroadcast {
         }
     }
 
+    public List<Broadcast> getArr() {
+        return arr;
+    }
 
     public int durationAllTranslation() {
 

@@ -4,7 +4,6 @@ import homeWork.broadcast.Broadcast;
 
 import java.util.List;
 
-// паттерн Builder
 public class Presenter {
 
     private String name;
@@ -12,18 +11,45 @@ public class Presenter {
     private String resume;
     private List<Broadcast> broadcastList;
 
-    public Presenter(String name, int workExperience, List<Broadcast> list) {
+    private Presenter() {
 
-        this.name = name;
-        this.workExperience = workExperience;
-        this.broadcastList = list;
     }
 
-    public Presenter(String name,List<Broadcast> list, String resume) {
+    public static class Builder {
 
-        this.name = name;
-        this.broadcastList = list;
-        this.resume = resume;
+        private String name;
+        private int workExperience;
+        private String resume;
+        private List<Broadcast> broadcastList;
+
+        public Builder name(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder workExperience(int workExperience) {
+            this.workExperience = workExperience;
+            return this;
+        }
+
+        public Builder resume(String resume) {
+            this.resume = resume;
+            return this;
+        }
+
+        public Builder broadcastList(List<Broadcast> broadcastList) {
+            this.broadcastList = broadcastList;
+            return this;
+        }
+
+        public Presenter build() {
+            Presenter presenter = new Presenter();
+            presenter.name = name;
+            presenter.workExperience = workExperience;
+            presenter.resume = resume;
+            presenter.broadcastList = broadcastList;
+            return presenter;
+        }
     }
 
     public String getName() {
