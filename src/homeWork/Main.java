@@ -18,7 +18,6 @@ public class Main {
         // продолжительность платного контента уже больше 50%
 
         workWithBroadcast.addPart(new Song("Original ba","Guf",150));
-        workWithBroadcast.addPart(new Song("Original ba","Guf",200));
         workWithBroadcast.print();
 
         Presenter presenter = new Presenter.Builder()
